@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Parejas</h2>
+<table border="1">
+  <tr><th>ID</th><th>Codigo</th><th>Categoria</th><th>Zona</th><th>Jugador1</th><th>Jugador2</th></tr>
+  {% for p in parejas %}
+  <tr>
+    <td>{{ p.id }}</td>
+    <td>{{ p.codigo }}</td>
+    <td>{{ p.categoria }}</td>
+    <td>{{ p.zona }}</td>
+    <td>{{ p.jugador1 }}</td>
+    <td>{{ p.jugador2 }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

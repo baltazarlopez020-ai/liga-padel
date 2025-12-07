@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>MiLigaPadel - Inicio</h2>
+<form action="{{ url_for('upload_excel') }}" method="post" enctype="multipart/form-data">
+  <label>Subir Excel (hoja 'Parejas'):</label>
+  <input type="file" name="excel" accept=".xlsx">
+  <button type="submit">Subir</button>
+</form>
+{% endblock %}
+<h1>¡APP FUNCIONANDO!</h1>

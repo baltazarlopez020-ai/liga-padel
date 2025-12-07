@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Posiciones</h2>
+{% if categorias %}
+  <form method="get">
+    <label>Categoria:</label>
+    <select name="categoria">
+      {% for c in categorias %}
+        <option value="{{ c }}">{{ c }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Ver</button>
+  </form>
+{% else %}
+  <h3>Categoría: {{ categoria }}</h3>
+  <table border="1">
+    <tr><th>Pareja</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>Puntos</th></tr>
+    {% for row in tabla %}
+      <tr>
+        <td>{{ row.pareja.jugador1 }} / {{ row.pareja.jugador2 }}</td>
+        <td>{{ row.PJ }}</td><td>{{ row.PG }}</td><td>{{ row.PE }}</td><td>{{ row.PP }}</td>
+        <td>{{ row.GF }}</td><td>{{ row.GC }}</td><td>{{ row.Puntos }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+{% endblock %}

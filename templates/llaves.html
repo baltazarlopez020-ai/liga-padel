@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block contenido %}
+<h3>Llaves</h3>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            {% if tabla|length > 0 %}
+                {% for col in tabla[0].keys() %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in tabla %}
+        <tr>
+            {% for val in fila.values() %}
+            <td>{{ val }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

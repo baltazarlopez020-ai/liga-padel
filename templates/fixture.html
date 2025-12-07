@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Fixture</h2>
+<table border="1">
+<tr><th>Id</th><th>Fecha</th><th>Categoria</th><th>Pareja A</th><th>Pareja B</th><th>Sets</th></tr>
+{% for p in partidos %}
+<tr>
+  <td>{{ p.id }}</td>
+  <td>{{ p.fecha }}</td>
+  <td>{{ p.categoria }}</td>
+  <td>{{ p.parejaA.jugador1 }} / {{ p.parejaA.jugador2 }}</td>
+  <td>{{ p.parejaB.jugador1 }} / {{ p.parejaB.jugador2 }}</td>
+  <td>{{ p.sets or '' }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

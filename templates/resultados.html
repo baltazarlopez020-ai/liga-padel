@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Resultados</h2>
+<form method="post">
+  <label>Partido:</label>
+  <select name="partido_id">
+    {% for p in partidos %}
+      <option value="{{ p.id }}">[{{ p.id }}] {{ p.categoria }} - {{ p.parejaA.jugador1 }}/{{ p.parejaA.jugador2 }} vs {{ p.parejaB.jugador1 }}/{{ p.parejaB.jugador2 }}</option>
+    {% endfor %}
+  </select>
+  <label>Sets (ej: 6-3,7-5):</label>
+  <input name="sets">
+  <button type="submit">Guardar</button>
+</form>
+{% endblock %}
